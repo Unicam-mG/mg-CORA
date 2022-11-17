@@ -1,3 +1,5 @@
-libmg
+git+https://github.com/Unicam-mG/mG.git
 numpy
 spektral
+tensorflow
+tensorflow-gpu

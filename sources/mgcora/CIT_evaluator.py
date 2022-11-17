@@ -3,8 +3,8 @@ from spektral.data import SingleLoader
 from libmg.compiler import GNNCompiler, FixPointConfig, Bottom, CompilationConfig
 from libmg.evaluator import PredictPerformance, CallPerformance
 
-from mgcora.CIT import AvailableDatasets, one, add2, div2, mlt1, isNN1, maxg, sumg, mul100, summation
-from mgcora.datasets.citation_dataset import get_dataset
+from sources.mgcora.CIT import AvailableDatasets, one, add2, div2, mlt1, isNN1, maxg, sumg, mul100, summation
+from sources.mgcora.datasets.citation_dataset import get_dataset
 
 
 compiler = GNNCompiler(psi_functions={'1': one, 'add2': add2, 'div2': div2, 'mlt1': mlt1, 'isNN1': isNN1,

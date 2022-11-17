@@ -2,15 +2,15 @@ import tensorflow as tf
 import os.path
 from enum import Enum
 import numpy as np
+from keras.optimizers import Adam
 from spektral.data.loaders import SingleLoader
 from spektral.models.gcn import GCN
-from tensorflow.python.keras.callbacks import EarlyStopping
-from tensorflow.python.keras.models import load_model
-from tensorflow.python.keras.losses import CategoricalCrossentropy
-from tensorflow.python.keras.optimizer_v2.adam import Adam
+from keras.callbacks import EarlyStopping
+from keras.models import load_model
+from keras.losses import CategoricalCrossentropy
 from libmg.layers import PsiLocal, Sigma, PsiGlobal
 
-from mgcora.datasets.citation_dataset import get_dataset
+from sources.mgcora.datasets.citation_dataset import get_dataset
 
 
 class AvailableDatasets(Enum):

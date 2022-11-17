@@ -1,8 +1,9 @@
 import os
 import tensorflow as tf
 
-from mgcora.CIT import AvailableDatasets, one, add2, div2, mlt1, isNN1, summation, train_model, maxg, sumg, mul100
-from mgcora.datasets.citation_dataset import get_dataset
+from sources.mgcora.CIT import AvailableDatasets, one, add2, div2, mlt1, isNN1, summation, train_model, maxg, sumg, \
+    mul100
+from sources.mgcora.datasets.citation_dataset import get_dataset
 from libmg.loaders import SingleGraphLoader
 from libmg.compiler import GNNCompiler, FixPointConfig, Bottom, CompilationConfig
 
@@ -18,11 +19,11 @@ class CudaTest(tf.test.TestCase):
 
 
 def preprocess(g):
-        gnn = train_model(AvailableDatasets.CORA)
-        loader = SingleGraphLoader(get_dataset(AvailableDatasets.CORA))
-        new_x = gnn((loader.load().__iter__().__next__()[0]))
-        g.x = new_x
-        return g
+    gnn = train_model(AvailableDatasets.CORA)
+    loader = SingleGraphLoader(get_dataset(AvailableDatasets.CORA))
+    new_x = gnn((loader.load().__iter__().__next__()[0]))
+    g.x = new_x
+    return g
 
 
 class InfluenceTest(tf.test.TestCase):
